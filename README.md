@@ -1,2 +1,19 @@
-# make_your_burger
-Frot-end de um site para montar e fazer pedidos de Burgers
+# 3_make_your_burger
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
