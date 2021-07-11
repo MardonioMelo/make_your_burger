@@ -5,9 +5,14 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### ompila e recarrega para desenvolvimento
 ```
 npm run serve
+```
+
+### Iniciar API de teste server-json para desenvolvimento
+```
+npm run backend
 ```
 
 ### Compiles and minifies for production
