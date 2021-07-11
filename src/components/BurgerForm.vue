@@ -85,6 +85,7 @@ export default {
     async createBurger(e) {
       e.preventDefault();
 
+       //obter os dados para cadastro
       const data = {
         nome: this.nome,
         carne: this.carne,
@@ -93,21 +94,25 @@ export default {
         status: "Solicitado",
       };
 
+      //converter os dados em texto para envio
       const dataJson = JSON.stringify(data);
 
+      //enviar os dados para cadastro
       const req = await fetch("http://localhost:3000/burgers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: dataJson,
       });
 
-      const res = await req.json(); // console.log(res) resposta do backend
+      //resposta do cadastro no servidor
+      const res = await req.json(); // console.log(res) 
 
       //colocar uma msg de sistema
       this.msg = `Pedido Nº ${res.id} realizado com sucesso!`;
+
       //limpar msg
       setTimeout(() => (this.msg = ""), 3000);
-
+      
       //limpar os campos
       this.nome = "";
       this.carne = "";
