@@ -19,7 +19,7 @@
         <div>
           <ul>
             <li v-for="(opcional, index) in burger.opcionais" :key="index">
-              {{opcional}}
+              {{ opcional }}
             </li>
           </ul>
         </div>
@@ -49,8 +49,6 @@ export default {
       const req = await fetch("http://localhost:3000/burgers");
       const data = await req.json();
       this.burgers = data;
-
-      console.log(data);
 
       // resgatar os status
     },
