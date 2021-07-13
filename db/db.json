@@ -83,19 +83,6 @@
   ],
   "burgers": [
     {
-      "nome": "Mardônio Melo",
-      "carne": "Picanha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Cheddar",
-        "Tomate",
-        "Pepino",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
       "nome": "Julia",
       "carne": "Veggie burger",
       "pao": "Integral",
@@ -104,7 +91,7 @@
         "Pepino",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": 2,
       "id": 2
     },
     {
@@ -114,7 +101,7 @@
       "opcionais": [
         "Bacon"
       ],
-      "status": "Solicitado",
+      "status": 1,
       "id": 3
     },
     {
@@ -125,7 +112,7 @@
         "Bacon",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": 1,
       "id": 4
     },
     {
@@ -140,7 +127,7 @@
         "Tomate",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": 2,
       "id": 5
     },
     {
@@ -150,8 +137,19 @@
       "opcionais": [
         "Salame"
       ],
-      "status": "Solicitado",
+      "status": 1,
       "id": 6
+    },
+    {
+      "nome": "Marilene",
+      "carne": "Alcatra",
+      "pao": "Integral",
+      "opcionais": [
+        "Bacon",
+        "Salame"
+      ],
+      "status": 2,
+      "id": 7
     }
   ]
 }

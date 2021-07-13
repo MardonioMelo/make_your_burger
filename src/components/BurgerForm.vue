@@ -91,7 +91,7 @@ export default {
         carne: this.carne,
         pao: this.pao,
         opcionais: Array.from(this.opcionais),
-        status: "Solicitado",
+        status: 1,
       };
 
       //converter os dados em texto para envio
@@ -108,7 +108,7 @@ export default {
       const res = await req.json(); // console.log(res) 
 
       //colocar uma msg de sistema
-      this.msg = `Pedido Nº ${res.id} realizado com sucesso!`;
+      this.msg = `Pedido Nº <b>${res.id}</b> realizado com sucesso!`;
 
       //limpar msg
       setTimeout(() => (this.msg = ""), 3000);

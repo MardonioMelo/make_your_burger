@@ -24,8 +24,16 @@
           </ul>
         </div>
         <div>
-          <select name="status" class="status">
-            <option value="">Selecione</option>
+          <select name="status" class="status" @change="updateStatus">
+            <option selected disabled>Selecione</option>
+            <option
+              v-for="s in status"
+              :key="s.id"
+              :value="s.id"
+              :selected="(burger.status == s.id)"
+            >
+              {{ s.tipo }}
+            </option>
           </select>
           <button class="delete-btn">Cancelar</button>
         </div>
@@ -49,11 +57,30 @@ export default {
       const req = await fetch("http://localhost:3000/burgers");
       const data = await req.json();
       this.burgers = data;
+    },
+    async getStatus() {
+      const req = await fetch("http://localhost:3000/status");
+      const data = await req.json();
+      this.status = data;
+    },
+    async updateStatus(e) {
+      const data = { status: e.target.options.selectedIndex };
+      const dataJson = JSON.stringify(data);
+      const order = e.path[2].childNodes[0].innerText;
 
-      // resgatar os status
+      const req = await fetch("http://localhost:3000/burgers/" + order, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+
+      const res = await req.json();
+
+      console.log(res)
     },
   },
   mounted() {
+    this.getStatus();
     this.getPedidos();
   },
 };
