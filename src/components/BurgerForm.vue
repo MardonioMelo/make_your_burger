@@ -117,7 +117,7 @@ export default {
       this.nome = "";
       this.carne = "";
       this.pao = "";
-      this.opcionais = "";
+      this.opcionais = [];
     },
   },
   mounted() {

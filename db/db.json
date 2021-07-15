@@ -83,31 +83,27 @@
   ],
   "burgers": [
     {
-      "nome": "João",
-      "carne": "Maminha",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa",
-        "Cheddar",
-        "Tomate",
-        "Pepino"
-      ],
-      "status": 2,
-      "id": 5
-    },
-    {
-      "nome": "Zenildo",
-      "carne": "Maminha",
+      "nome": "Luiz",
+      "carne": "Veggie burger",
       "pao": "Pão Frances",
       "opcionais": [
-        "Salame",
         "Cheddar",
+        "Salame",
         "Pepino"
       ],
       "status": 1,
-      "id": 6
+      "id": 1
+    },
+    {
+      "nome": "João",
+      "carne": "Alcatra",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Cheddar",
+        "Salame"
+      ],
+      "status": 1,
+      "id": 4
     }
   ]
 }
