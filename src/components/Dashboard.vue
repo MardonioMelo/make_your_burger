@@ -25,7 +25,11 @@
           </ul>
         </div>
         <div>
-          <select name="status" class="status" @change="updatedBurger($event, burger.id)">
+          <select
+            name="status"
+            class="status"
+            @change="updatedBurger($event, burger.id)"
+          >
             <option selected disabled>Selecione</option>
             <option
               v-for="s in status"
@@ -69,42 +73,29 @@ export default {
       const data = await req.json();
       this.status = data;
     },
-    async updatedBurger(event, id){
-      const option = event.target.value
-     const dataJson = JSON.stringify({status:option})
-     const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+    async updatedBurger(event, id) {
+      const option = event.target.value;
+      const dataJson = JSON.stringify({ status: option });
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: dataJson,
       });
       const res = await req.json();
-      console.log(res)
-    },
-    async updateStatus(e) {
-      const data = { status: e.target.options.selectedIndex };
-      const dataJson = JSON.stringify(data);
-      const order = e.path[2].childNodes[0].innerText;
-
-      const req = await fetch("http://localhost:3000/burgers/" + order, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: dataJson,
-      });
-      const res = await req.json();
+      console.log(res);
     },
     async deleteBurger(id) {
       const req = await fetch(`http://localhost:3000/burgers/${id}`, {
         method: "DELETE",
       });
       const res = await req.json();
-    
+
       //colocar uma msg de sistema
       this.msg = `Pedido Nº <b>${id}</b> excluido com sucesso!`;
 
       //limpar msg
       setTimeout(() => (this.msg = null), 3000);
-      this.getPedidos()   
-      
+      this.getPedidos();
     },
   },
   mounted() {
