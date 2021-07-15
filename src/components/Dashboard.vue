@@ -25,7 +25,7 @@
           </ul>
         </div>
         <div>
-          <select name="status" class="status" @change="updateStatus">
+          <select name="status" class="status" @change="updatedBurger($event, burger.id)">
             <option selected disabled>Selecione</option>
             <option
               v-for="s in status"
@@ -68,6 +68,17 @@ export default {
       const req = await fetch("http://localhost:3000/status");
       const data = await req.json();
       this.status = data;
+    },
+    async updatedBurger(event, id){
+      const option = event.target.value
+     const dataJson = JSON.stringify({status:option})
+     const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+      const res = await req.json();
+      console.log(res)
     },
     async updateStatus(e) {
       const data = { status: e.target.options.selectedIndex };
