@@ -7,12 +7,13 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
+import logo_src from "./assets/img/logo.png"
 
 export default {
   components: { Navbar, Footer },
   data() {
     return {
-      logo_src: "/img/logo.png",
+      logo_src: logo_src,
       app_name: "Make Your Burger",
     };
   },
