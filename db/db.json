@@ -95,15 +95,16 @@
       "id": 1
     },
     {
-      "nome": "João",
-      "carne": "Alcatra",
-      "pao": "Parmesão e Orégano",
+      "nome": "Maria",
+      "carne": "Maminha",
+      "pao": "Integral",
       "opcionais": [
-        "Cheddar",
-        "Salame"
+        "Bacon",
+        "Salame",
+        "Cebola roxa"
       ],
-      "status": "2",
-      "id": 4
+      "status": "3",
+      "id": 5
     }
   ]
 }
