@@ -91,7 +91,7 @@
         "Salame",
         "Pepino"
       ],
-      "status": "3",
+      "status": "1",
       "id": 1
     },
     {
@@ -102,7 +102,7 @@
         "Cheddar",
         "Salame"
       ],
-      "status": 1,
+      "status": "2",
       "id": 4
     }
   ]

@@ -82,7 +82,11 @@ export default {
         body: dataJson,
       });
       const res = await req.json();
-      console.log(res);
+
+      var op_text = event.target.children[event.target.selectedIndex].text;
+
+      this.msg = `O pedido Nº <b>${res.id}</b> foi atualizado para <b>${op_text}</b>!`;
+      setTimeout(() => (this.msg = null), 3000);
     },
     async deleteBurger(id) {
       const req = await fetch(`http://localhost:3000/burgers/${id}`, {
@@ -90,10 +94,7 @@ export default {
       });
       const res = await req.json();
 
-      //colocar uma msg de sistema
-      this.msg = `Pedido Nº <b>${id}</b> excluido com sucesso!`;
-
-      //limpar msg
+      this.msg = `Pedido Nº <b>${id}</b> removido com sucesso!`;
       setTimeout(() => (this.msg = null), 3000);
       this.getPedidos();
     },
